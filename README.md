@@ -12,7 +12,7 @@ Given a list of fiscal policy measures from the AFG dataset (Alesina, Favero & G
 2. **Classifies** the motivation behind each measure into a 7-category taxonomy (fiscal consolidation, redistribution, public investment, etc.)
 3. **Maps** each measure's target population to the appropriate Eurostat microdata survey variable(s) — EU-SILC, LFS, HBS, SES, EHIS, or ECHP — with exact code values
 4. **Handles indirect taxes** (VAT, excise duties) as expenditure-based targets, mapping them deterministically to HBS COICOP expenditure categories without an LLM call
-5. **Validates** results against a hand-coded seed case, reporting motivation accuracy, income threshold MAE, and target recall
+5. **Validates** results against a hand-coded seed case, reporting motivation accuracy, income threshold, and target recall
 6. **Scores** each extracted measure with a mechanical confidence score (0–100) based on observable signals (source found, law identified, income numeric, etc.)
 
 Output is a multi-sheet Excel workbook covering multiple country-years, with one sheet per year plus a combined data sheet and seed validation report.
@@ -98,7 +98,7 @@ python fiscal_agent.py
 # Specific years
 python fiscal_agent.py --years 2011 2012 2013
 
-# Different country (requires AFG rows and source PDFs for that country)
+# WIP: Different country (requires AFG rows and source PDFs for that country, currently code is highly specific for Italy)
 python fiscal_agent.py --country FRA --years 2010 2011
 ```
 
@@ -216,7 +216,7 @@ The COICOP keyword matcher covers all 12 COICOP divisions at both division and s
 
 ## Confidence scoring
 
-Rather than relying on Claude's self-reported confidence (which is unreliable), every result is scored mechanically from observable signals:
+Rather than relying on Claude's self-reported confidence, every result is scored mechanically from observable signals:
 
 | Signal | Weight |
 |---|---|
