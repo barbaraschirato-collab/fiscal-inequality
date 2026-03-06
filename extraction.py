@@ -28,7 +28,7 @@ from chunking import (
 
 # ─────────────────────────────────────────────────────────────────────────────
 # PROMPT TEMPLATE
-# [FIX-2] NOTE removed from inside JSON block — moved into TASK section above.
+# NOTE removed from inside JSON block — moved into TASK section above.
 # Editing the prompt: change only the string below; nothing else needs updating.
 # ─────────────────────────────────────────────────────────────────────────────
 
