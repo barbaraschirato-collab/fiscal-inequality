@@ -17,8 +17,8 @@ import os
 BASE = Path(
     os.environ.get(
         "FISCAL_BASE_DIR",
-        r"C:\Users\P70096721\Desktop\Narratives around Fiscal Policy and Inequality"
-        r"\Back to basics\Narrative identification\AFG Dataset Extension",
+        r""
+        r"",
     )
 )
 
