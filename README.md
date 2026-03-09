@@ -22,7 +22,7 @@ Output is a multi-sheet Excel workbook covering multiple country-years, with one
 ## Architecture
 
 ```
-fiscal_agent.py   ← orchestrator, CLI entry point, checkpoint logic
+fiscal_agent.py   ← orchestrator, checkpoint logic
 ├── loaders.py    ← reads AFG Excel, source PDFs, Eurostat dictionaries
 ├── chunking.py   ← scores and selects relevant document excerpts per measure
 ├── extraction.py ← Claude Sonnet: extracts target population + motivation
